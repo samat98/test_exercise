@@ -39,15 +39,15 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter implements Web
                 .csrf()
                 .disable()
                 .authorizeRequests()
-                .antMatchers("/auth/**").permitAll()
-                .anyRequest().permitAll();
-//        http.addFilterBefore(authTokenFilter, UsernamePasswordAuthenticationFilter.class);
+                .antMatchers("/auth/**").permitAll();
+//                .anyRequest().aithorized();
+        http.addFilterBefore(authTokenFilter, UsernamePasswordAuthenticationFilter.class);
     }
-//
-//    @Override
-//    public void configure(AuthenticationManagerBuilder auth) throws Exception {
-//        auth.userDetailsService(securityHelper);
-//    }
+
+    @Override
+    public void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(securityHelper);
+    }
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {

@@ -33,11 +33,8 @@ public class AuthenticationController {
     @PostMapping("authenticate")
     public ResponseEntity<?> getToken(@RequestBody User auth) {
 
-//        Authentication authentication =
-//                securityHelper.getAuthentication(auth.getUsername(), auth.getPassword());
-        UsernamePasswordAuthenticationToken authenticationToken =
-                new UsernamePasswordAuthenticationToken(auth.getUsername(), auth.getPassword());
-        Authentication authentication = authenticationManager.authenticate(authenticationToken);
+        Authentication authentication =
+                securityHelper.getAuthentication(auth.getUsername(), auth.getPassword());
         SecurityContext context = SecurityContextHolder.getContext();
         context.setAuthentication(authentication);
 

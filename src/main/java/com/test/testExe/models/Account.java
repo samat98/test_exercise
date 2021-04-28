@@ -16,8 +16,6 @@ import java.util.List;
 @Builder
 public class Account implements Serializable {
 
-    private static final long serialVersionUID = 2L;
-
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
     @SequenceGenerator(name = "sequenceGenerator")
