@@ -1,14 +1,19 @@
-This is test app
-For authentication please make POST request TO 
+This is test app.
+
+For **authentication** please make POST request to: 
 "http://localhost:5656/auth/authenticate"
 with json body : 
+
 `{
     "username" : "admin",
     "password" : "12345"
 }`
+
 And set response token as Authorization header with Bearer prefix;
 
 Существующие аккаунты с которыми можно работать: 999777111222, 999777222333
+
+
 *Требование
 
 
